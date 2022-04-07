@@ -1,0 +1,10 @@
+public/build
+node_modules
+package-lock.json
+yarn-lock.json
+build
+.DS_Store
+artifacts
+cache
+# Local Netlify folder
+.netlify

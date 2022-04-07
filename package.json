@@ -1,0 +1,37 @@
+{
+  "name": "robo-froge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "node": "npx hardhat node",
+    "nodelocal": "npx hardhat node --network localhost",
+    "nodewatch": "npx hardhat node --watch --show-stack-traces",
+    "compile": "npx hardhat compile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "ethers": "^5.6.1",
+    "hardhat": "^2.9.3",
+    "hardhat-abi-exporter": "^2.8.0",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-deploy": "^0.11.4",
+    "hardhat-gas-reporter": "^1.0.8",
+    "hardhat-log-remover": "^2.0.2",
+    "hardhat-tracer": "^1.1.0-rc.3",
+    "moment": "2.29.1",
+    "node-telegram-bot-api": "^0.56.0",
+    "puppeteer": "^13.5.2",
+    "react": "^18.0.0",
+    "web3": "^1.7.1",
+    "zustand": "^3.7.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED"
+}

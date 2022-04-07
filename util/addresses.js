@@ -1,0 +1,22 @@
+const addresses = {
+  mainnet:{
+    UniswapV2Router02: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    UniswapV2Factory: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+    FROGEX: {
+      ERC20:'0x5fA54fdDF1870C344DbFaBb37dFab8700Ec0Def1',
+      PAIR:'0x5119155c5644c31C94f2fbAf0CCC79C4F92Fb686',
+      OWNER:'0xb8B12799c4A7ff8c3Cf03fc5aD1CE7531A74B751',
+      BENE_CHTY:'0xE6fE9AD50d777D23D22d3C2fb5B34cdCdbF7B1E8',
+      BENE_MKTG:'0x3491E63937c390E786432fee7cdb11D56d45BD93',
+    },
+    WETH: {
+      ERC20:'0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+    },
+  },
+  ropsten:{
+    UniswapV2Router02: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    UniswapV2Factory: "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+  }
+}
+
+module.exports =  addresses;

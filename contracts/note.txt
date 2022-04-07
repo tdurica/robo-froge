@@ -1,0 +1,117 @@
+Major level security issues detected:
+The following issues violate the ethics of Decentralised Finance and present a centralisation risk to the
+community. To mitigate these risks, ensure the Development team is doxxed or consider (Know Your Customer)
+KYC services.
+
+1. Contract allows owner to alter transactions fees. Further to that, no
+
+MOONCO: updated as per recommendation. (event added)
+
+2. Contract allows owner to blacklist wallets and exclude wallets from rewards, and to do so with no visibility to
+public (no event emitted).
+
+MOONCO: updated as per recommendation. (event added)
+
+3. Contract allows owner to remove liquidity with no visibility to public (no event emitted). While there is a require
+function to prevent the liquidity from being removed prior to the LOCKER_unlockDate value, there is no logic in
+the contract to prevent the LOCKER_unlockDate from remaining as its initial declaration (which is 2 hours after
+contract deployment). Updating the value of the LOCKER_unlockDate is at the discretion of the owner.
+
+MOONCO:
+- events added for externalAddLiquidityETH and externalRemoveLiquidityETH
+- unlockDate left unchanged - discretion will be practiced responsibly)
+
+Minor level security issues detected:
+1. Missing events for changes to state variables in various functions (eg. Line 508, 539, 541, 543). This means only
+those authorised can alter state variables without the community being aware of changes. Recommendation
+is to add events for all changes to state variables or communicate to community when relevant changes are
+committed to improve transparency.
+
+MOONCO: updated as per recommendation.
+
+2. Lack of input validation for withdrawCharityFunds and withdrawMarketingFunds which could lead to
+unexpected loss if an invalid address is set, for example, address(0).
+
+MOONCO: updated as per recommendation.
+
+Informational issues detected:
+
+
+1. Third party dependency on Pancake Swap protocol (line 142, 152). Recommendation is for the Development
+team to monitor updates made to third party contracts to ensure changes to not impact the receiving contract
+or are mitigated/managed accordingly.
+
+
+1. Lack of message strings on require statements for changes to state variables (eg. Line 319, 325, 478, 497, 504,
+505, 542). Recommendation is to add message strings to help inform the author the reason if the transaction
+fails.
+
+Logic issues:
+Critical logic issues detected:
+1. Free functions (line 8) cannot have visibility set, and must have implementation. Recommendation is to remove
+the function (if not required) or complete the implementation. Source code cannot be compiled while this line
+exists. Assume this is a copy/paste error, Development team to conﬁrm.
+
+MOONCO: this was indeed a copy/paste typo
+
+Informational level logic issues detected:
+1. FXSwap contract is prohibited from receiving any tokens from any sender other than BNB contract, which
+could present as limiting behaviour. Further to that, the use of the asset function as a form of error handling
+has gas implications (gas is not refunded as part of the asset function as opposed to the require function).
+While the implementation is not incorrect, it is unclear what the purpose or reasoning is for this logic.
+Development team to conﬁrm.
+
+MOONCO: My understanding is that assert is intended to be used in situations where a failure to
+meet the given conditions would represent a deeper, more fundamental problem with code.
+The example in line 122, in FxSwap's receive() function, I have changed to require().
+The other 2 examples are lifted from Uniswap code - I am under the assumption that assert
+was used in these places for a good reason, although I suspect it is meant to deliberately
+exert punishment in scenarios where the assert may fail.  I am leaving these two as assert() statements.
+
+2. Opportunity to condense codebase by using the getAmountsOut function presented in the UniSwapRouter
+interface since the implementation on line 129 appears to be a direct replica.
+
+MOONCO: left unchanged
+
+3. Opportunity to condense codebase by removing ttlFeePctSells and ttlFeePctBuys variables, since no
+meaningful use case can be determined for either variable within the contract.
+
+MOONCO: these variables do serve a purpose - they are read from by the code which ascertains the fee amount to subtract from buys and sells
+
+4. SPDX license is speciﬁed as UNLICENSED which is not a valid licence identiﬁer as per the SPDX licenses list.
+However, it is understood that the text is proprietary. Recommendation is for the Development team to update
+the SPDX license to NONE and keep lines 3-7 for information.
+
+MOONCO: updated as per recommendation.
+
+5. Layout of the ﬁle does not follow Solidity guidelines, particularly within the contracts. Inside each contract,
+library or interface, use the following order:
+  1. Type declaration
+  2. State variables
+  3. Events
+  4. Functions
+
+MOONCO: updated as per recommendation.
+
+3. Function naming does not follow Solidity guidelines eg. Line 138, 150, 214-219 etc
+
+MOONCO: left unchanged
+
+4. Integers assigned for _TRUE (2) and _FALSE (1) are contradictory to binary logic where True typically is
+represented as 1 and false is represented as 0. Recommendation is to change datatype to bool or change
+assignments to align with binary notation.
+
+MOONCO: 1 and 2 are lifted from the example provided by openzeppelin's reentrancy guard.
+My own reasoning (perhaps I am missing something) matches the explanation they have given in ReentrancyGuard.sol:
+    // The values being non-zero value makes deployment a bit more expensive,
+    // but in exchange the refund on every call to nonReentrant will be lower in
+    // amount. Since refunds are capped to a percentage of the total
+    // transaction's gas, it is best to keep them low in cases like this one, to
+    // increase the likelihood of the full refund coming into effect.
+
+
+5. Moderate use of comments. Comments help to improve readability and is encouraged. Refer to the NatSpec
+Solidity guidelines for further information.
+
+MOONCO: left unchanged.  The code will not be published for some length of time, in order to protect IP
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head><title>Title</title>
+  <meta name="viewport" content="width=300,height=185, initial-scale=4">
+  <style>
+    @font-face {  font-family: Montserrat;  src: local("./Montserrat-SemiBold.ttf"); }
+    @font-face {  font-family: Raleway;  src: local("./raleway-heavy.ttf"); font-weight: 500;}
+    html,body{background-color: transparent;margin:0;}
+    * {color: #aaff00; box-sizing: border-box;
+      font-size:34px; font-family: 'Montserrat', sans-serif; font-weight: 500;
+    }
+    body {width:800px;height:200px;}
+
+    #box {
+      border-radius: 0;
+      font-family: "Raleway", sans-serif;
+      font-weight: 900;
+      position: relative;overflow: hidden;
+      height: 100%;
+    }
+    #boxBg{
+      content: '';
+      background-image: url("800x200/001.jpg");
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;bottom: 0;left: 0;right: 0;
+      box-shadow: rgb(204, 0, 232) 3px 3px 19px 0px inset, rgba(0, 255, 255, 0.5) -3px -3px 19px 1px inset;
+    }
+    #user4{
+      color: #7d9358;
+      position: absolute;top: 48px;left: 5px;background-color: transparent;
+      text-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      z-index:9;
+    }
+    #usdVal{
+      position: absolute;top: 50px;left: 5px;background-color: transparent;
+      text-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #txtype{
+      position: absolute;
+      top: 2%;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+      font-size:34px;
+      font-weight: 500;
+      letter-spacing:0.1em;
+      -webkit-text-fill-color: #afff00;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #afff00;
+      text-shadow:
+        2px 2px #f327f0,
+        4px 4px #000000;
+    }
+    #froges {margin: 10px 5px 0 50%;text-align: center;
+      z-index:3;
+
+    }
+    img {height:24px;width:auto;opacity:.8;
+      filter: drop-shadow(0px 2px 2px black);}
+  </style>
+</head><body>
+
+<div id='box'>
+  <div id="boxBg"></div>
+  <div id="txtype">FROGEX BUY!</div><br/>
+  <div id="user4">(((BD93)))</div>
+  <div id="usdVal">$2345.67</div>
+  <div id="froges">
+    <img src="froge-logo.svg"/>
+  </div>
+</div>
+
+
+</body></html>
