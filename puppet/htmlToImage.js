@@ -11,7 +11,7 @@ module.exports =  async function htmlToImage (imgId, numFroges,user4,actionLabel
   // await page.setContent(html,{
   //   waitUntil:'networkidle0'//load |domcontentloaded |networkidle0|networkidle2
   // });
-  await page.goto('file://A:/FROGE/robo-froge/puppet/builder.html')
+  await page.goto(path.resolve(__dirname , '/builder.html'))
   await page.setViewport({
     width: 500,
     height: 500,
