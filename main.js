@@ -63,6 +63,7 @@ async function main() {
     };
     await bot.sendPhoto('-1001478574201', imageBuffer,fileOptions)
   }
+
   // });
   bot.on('message',async (message)=>{
     // console.log(message)
@@ -79,6 +80,11 @@ async function main() {
 
   }
 }
+
+async function digits(digitSeed){
+  
+}
+
 /*
 * Spent: 0.125 ETH ($419.58)
 Got: 63,058,409 FROGEX
