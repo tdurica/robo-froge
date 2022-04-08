@@ -8,7 +8,7 @@ const accountsDev = [
 ];
 
 
-const chainIds = {mainnet: 1, ropsten: 3, rinkeby: 4, goerli: 5,kovan: 42, testnet: 97, localhost:31337}
+const chainIds = {mainnet: 1, ropsten: 3, rinkeby: 4, goerli: 5, kovan: 42, testnet: 97, localhost:31337}
 // Go to https://www.alchemyapi.io, sign up, create
 // a new App in its dashboard, and replace "KEY" with its key
 function getApiUrl(provider, network){
