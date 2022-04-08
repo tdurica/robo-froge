@@ -1,5 +1,5 @@
 const {
-  _Add, _Div, _Mul, weiToUSD, _toBN, sRnd
+  _Add, _Div, _Mul, weiToUSD, _toBN, sRnd, sExp, last4
 } = require('./util/zmath.js');
 const { readFXP,useCrawlStore } = require('./util/services.js');
 
@@ -9,7 +9,6 @@ const htmlToImage  = require('./puppet/htmlToImage.js');
 const hre  = require("hardhat");
 const {ethers,web3} = hre;
 const { sup }  = require('./puppet/partials.js');
-const { sExp, last4 }  = require('./util/zmath.js');
 const fs = require('fs');
 const APIKEY = '5162984001:AAGrfqHU0D6zbK_87Tu7w4M3DLCJDUY2J9E'
 const bot = new TelegramBot(APIKEY,{polling:true})
@@ -81,9 +80,7 @@ async function main() {
   }
 }
 
-async function digits(digitSeed){
-  
-}
+
 
 /*
 * Spent: 0.125 ETH ($419.58)
