@@ -66,11 +66,6 @@ const optsNetworks = {
     accounts: accountsDev
   }
 }
-let OFFICIAL_FX_DEPLOYMENT=  {
-  "address":"0x462D1c363E26151c80f32fD96Cbf48581b64D84D",
-  "contract":"0x822dba3d963696Ed340782f2456544d42EC0Def1",
-  "privKey":"30e4f09d903a181ae7411bd37ad33fc98defb1250ba2bc6d59c7416a82830dd0"
-}
 
 const uniSwapCompilers = [
   {version: "0.5.16", settings: {optimizer: {enabled: true, runs: 200}}},
